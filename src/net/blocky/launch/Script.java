@@ -1,4 +1,4 @@
-package org.jglrxavpok.blocky.launch;
+package net.blocky.launch;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -159,6 +159,8 @@ public class Script
     
     public boolean hasNext()
     {
+        if(index == -1)
+            return false;
         return index < instructions.size();
     }
 
@@ -166,8 +168,10 @@ public class Script
     {
         if(hasNext())
         {
-            this.executeInstruction(instructions.get(index));
-            index++;
+            if(this.executeInstruction(instructions.get(index)) != -1)
+                index++;
+            else
+                index = -1;
         }
     }
 }

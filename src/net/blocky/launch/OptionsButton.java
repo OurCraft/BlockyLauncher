@@ -1,4 +1,4 @@
-package org.jglrxavpok.blocky.launch;
+package net.blocky.launch;
 
 import java.awt.Color;
 import java.awt.Graphics;
